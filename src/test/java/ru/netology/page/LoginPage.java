@@ -2,7 +2,7 @@ package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
-import ru.netology.mode.User;
+import ru.netology.mode.DataGenerator;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
@@ -15,9 +15,9 @@ public class LoginPage {
     @FindBy(css = "[data-test-id=action-login]")
     private SelenideElement loginButton;
 
-    public VerificationPage validLogin(User user) {
-        loginField.setValue(user.getLogin());
-        passwordField.setValue(user.getPassword());
+    public VerificationPage validLogin(DataGenerator.AuthInfo info) {
+        loginField.setValue(info.getLogin());
+        passwordField.setValue(info.getPassword());
         loginButton.click();
         return page(VerificationPage.class);
     }

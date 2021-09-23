@@ -21,7 +21,6 @@ public class VerificationCode {
                 )
         ) {
             var code = runner.query(conn, codeSQL, new ScalarHandler<>());
-            System.out.println(code);
             verificationCode = (String) code;
         }
         return verificationCode;

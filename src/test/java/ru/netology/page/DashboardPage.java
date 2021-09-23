@@ -10,5 +10,7 @@ public class DashboardPage {
 
     public DashboardPage() {
         heading.shouldBe(Condition.visible);
+        heading.shouldHave(Condition.text("Личный кабинет"));
     }
+
 }
